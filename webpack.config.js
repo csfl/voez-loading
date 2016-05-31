@@ -1,6 +1,5 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     cache: true,
     entry: {
