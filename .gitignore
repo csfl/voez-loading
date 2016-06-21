@@ -39,3 +39,5 @@ node_modules
 public/app.js
 
 .idea
+
+build

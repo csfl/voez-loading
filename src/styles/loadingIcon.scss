@@ -1,5 +1,5 @@
 @mixin loading-icon($ChildSize, $color){
-	$childSize: $ChildSize - 2;
+	$childSize: $ChildSize - 1;
 	$moveMax: $ChildSize;
 
 	position: relative;
@@ -9,22 +9,31 @@
 	left: 0px;
 	margin: auto;
 
-	width: ( $ChildSize * 3 ) + 3px;
-	height: ( $ChildSize * 3 ) + 3px;
+	width: ( $ChildSize * 3 ) + 1px;
+	height: ( $ChildSize * 3 ) + 1px;
 
 	transform:rotate(-45deg);
-	animation: main-block-rotate 4s ease-in-out infinite ;
+	animation: main-block-rotate 2s ease-in-out infinite ;
 
-	$rotate: -45deg;
+	//$rotate: -45deg;
+	// myself
+	// animation: main-block-rotate 4s ease-in-out infinite ;
+	//@keyframes main-block-rotate {
+	//	0%  { transform: rotate($rotate)  }
+	//	25% { transform: rotate($rotate * 5) }
+	//	50% { transform: rotate($rotate * 7) }
+	//
+	//	75% { transform: rotate($rotate * 11) }
+	//	100%{ transform: rotate($rotate * 13) }
+	//}
 
+	// voez.rayark.net
 	@keyframes main-block-rotate {
-		0%  { transform: rotate($rotate)  }
-		25% { transform: rotate($rotate * 5) }
-		50% { transform: rotate($rotate * 7) }
-
-		75% { transform: rotate($rotate * 11) }
-		100%{ transform: rotate($rotate * 13) }
+		0%  { transform: rotate(-45deg)  }
+		50% { transform: rotate(-225deg) }
+		100%{ transform: rotate(-405deg) }
 	}
+
 
 	.block {
 		position: absolute;
@@ -35,7 +44,7 @@
 		height: $childSize;
 
 		border-color: $color;
-		border-width: 2px;
+		border-width: 1px;
 		border-style: solid;
 	}
 
@@ -45,9 +54,9 @@
 		animation: block-one-rotate 2s ease-in-out infinite ;
 	}
 	@keyframes block-one-rotate {
-		0%  { top: $moveMax + 2; }
+		0%  { top: $moveMax + 1; }
 		50% { top: 0px;  }
-		100%{ top: $moveMax + 2; }
+		100%{ top: $moveMax + 1; }
 	}
 
 	.block-two {
@@ -83,6 +92,8 @@
 }
 
 .loading-icon-main {
-	@include loading-icon(19px, #fff);
+	//@include loading-icon(15px, #fff);
+
+	@include loading-icon(20px, #fff);
 }
 
